@@ -63,6 +63,6 @@ cMod.controller( 'MyCoolCtrl', function ( $scope ) {
     I like to place mine in the index page so it gets cached early.
 -->
 <script type="text/ng-template" id="fully-loaded/my-loading-template.html">
-    <p class="loading-message" >This is my loading message</p>
+    <p>This is my loading message</p>
 </script>
 ~~~
