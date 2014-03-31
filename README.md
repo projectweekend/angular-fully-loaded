@@ -35,7 +35,7 @@ This module creates two custom directives (tags) that can be used anywhere in yo
 The loading directive has two attributes that must be populated:
 
 * **data** - This attribute must be bound to a property in your controller. This property must be an object with a booloean property of its own named `loading`. Toggling the value of `loading` from a controller or service will cause the message to show/hide.
-* **template** - This is the path to the HTML template the controls the presentation of your custom loading message.
+* **template** - This is the path to the HTML template the controls the presentation of the loading message.
 
 #### Loading Controller Example
 ~~~javascript
