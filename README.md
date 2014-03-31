@@ -66,3 +66,6 @@ cMod.controller( 'MyCoolCtrl', function ( $scope ) {
     <p>This is my loading message</p>
 </script>
 ~~~
+
+### Error Directive
+Coming soon...
