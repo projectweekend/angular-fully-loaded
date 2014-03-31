@@ -27,3 +27,42 @@ var app = angular.module('myApp', [
     'angular-fully-loaded'
 ]);
 ~~~
+
+## Use it
+This module creates two custom directives (tags) that can be used anywhere in your templates. 
+
+### Loading Directive
+The loading directive has two attributes that must be populated:
+
+* **data** - This attribute must be bound to a property in your controller. This property must be an object with a booloean property of its own named `loading`. Toggling the value of `loading` from a controller or service will cause the message to show/hide.
+* **template** - This is the path to the HTML template the controls the presentation of your custom loading message.
+
+#### Loading Controller Example
+~~~javascript
+var cMod = angular.module( 'myApp.controllers', [] );
+
+cMod.controller( 'MyCoolCtrl', function ( $scope ) {
+
+    $scope.SomethingThatLoadsData = {
+        status: {
+            loading: false // toggle this to true anywhere you wait
+        }
+    };
+
+} );
+~~~
+
+
+#### Loading Template Example
+~~~html
+<fl-loading data="SomethingThatLoadsData.status" template="fully-loaded/my-loading-template.html"></fl-loading>
+
+<!--
+    This script tag holds the HTML for the loading message.
+    It can be placed in any page the Angular app will load.
+    I like to place mine in the index page so it gets cached early.
+-->
+<script type="text/ng-template" id="fully-loaded/my-loading-template.html">
+    <p class="loading-message" >This is my loading message</p>
+</script>
+~~~
