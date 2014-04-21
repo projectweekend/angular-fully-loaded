@@ -68,4 +68,37 @@ cMod.controller( 'MyCoolCtrl', function ( $scope ) {
 ~~~
 
 ### Error Directive
-Coming soon...
+The error directive has the same two attributes as the loading directive:
+
+* **data** - This attribute must be bound to a property in your controller. This property must be an object with a booloean property of its own named `error`. Toggling the value of `error` from a controller or service will cause the message to show/hide.
+* **template** - This is the path to the HTML template the controls the presentation of the error message.
+
+#### Error Controller Example
+~~~javascript
+var cMod = angular.module( 'myApp.controllers', [] );
+
+cMod.controller( 'MyCoolCtrl', function ( $scope ) {
+
+    $scope.SomethingThatLoadsData = {
+        status: {
+            loading: false, // toggle this to true anywhere you wait
+            error: false // toggle this to true when something goes wrong
+        }
+    };
+
+} );
+~~~
+
+#### Error Template Example
+~~~html
+<fl-error data="SomethingThatLoadsData.status" template="fully-loaded/my-error-template.html"></fl-error>
+
+<!--
+    This script tag holds the HTML for the error message.
+    It can be placed in any page the Angular app will load.
+    I like to place mine in the index page so it gets cached early.
+-->
+<script type="text/ng-template" id="fully-loaded/my-error-template.html">
+    <p>This is my error message</p>
+</script>
+~~~
