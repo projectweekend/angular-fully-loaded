@@ -24,12 +24,12 @@ var app = angular.module('myApp', [
     'myApp.filters',
     'myApp.services',
     // 3rd party dependencies
-    'angular-fully-loaded'
+    'fully-loaded'
 ]);
 ~~~
 
 ## Use it
-This module creates two custom directives (tags) that can be used anywhere in your templates. 
+This module creates two custom directives (tags) that can be used anywhere in your templates.
 
 ### Loading Directive
 The loading directive has two attributes that must be populated:
